@@ -7,7 +7,7 @@ This module demonstrates and practices:
   -- UNIT TESTING.
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Jacob Ritenour.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m4t_tester
