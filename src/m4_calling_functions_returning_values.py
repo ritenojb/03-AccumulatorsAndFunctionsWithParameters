@@ -8,7 +8,7 @@ This module demonstrates and practices:
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
          their colleagues and Jacob Ritenour.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m4t_tester
 
@@ -38,7 +38,7 @@ def main():
 def run_test_sum_of_digits():
     """ Tests the  sum_of_digits   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function, as follows:
+    # DONE: 2. Implement this TEST function, as follows:
     #
     #  Step 1:  This TEST function tests the  sum_of_digits  function.
     #    So read the doc-string of the  sum_of_digits  function
@@ -72,7 +72,23 @@ def run_test_sum_of_digits():
     # TO DO: 2 (continued).
     # Below this comment, add 3 more test cases of your own choosing.
     # ------------------------------------------------------------------
+    # Test 2:
+    expected2 = 18
+    answer2 = sum_of_digits(918)
+    print('Test 2 expected:', expected2)
+    print('         actual:', answer2)
 
+    # Test 3:
+    expected3 = 23
+    answer3 = sum_of_digits(2786)
+    print('Test 3 expected:', expected3)
+    print('         actual:', answer3)
+
+    # Test 4:
+    expected4 = 19
+    answer4 = sum_of_digits(1963)
+    print('Test 4 expected:', expected4)
+    print('         actual:', answer4)
 
 def sum_of_digits(number):
     """
