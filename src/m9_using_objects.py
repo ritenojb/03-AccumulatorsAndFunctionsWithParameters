@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jacob Ritenour.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,8 +14,9 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-
-
+    two_circles()
+    circle_and_rectangle()
+    lines()
 def two_circles():
     """
     -- Constructs an rg.RoseWindow.
@@ -26,8 +27,21 @@ def two_circles():
            -- One is filled with some color and one is not filled.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow(400, 400)
+
+    center_point = rg.Point(160, 160)
+    circle = rg.Circle(center_point, 150)
+    circle.fill_color = 'red'
+    circle.attach_to(window)
+
+    center_point2 = rg.Point(200, 200)
+    circle2 = rg.Circle(center_point2, 100)
+    circle2.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its green doc-string above.
+    # DONE: 2. Implement this function, per its green doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.pdf  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -67,7 +81,7 @@ def circle_and_rectangle():
            150.0
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -75,7 +89,35 @@ def circle_and_rectangle():
     # IMPORTANT: Use the DOT TRICK to guess the names of the relevant
     #       instance variables for outline thickness, etc.
     # ------------------------------------------------------------------
+    window = rg.RoseWindow(500, 500)
 
+    circ_x = 200
+    circ_y = 200
+    rect_x_init = 100
+    rect_y_init = 50
+    rect_x_final = 300
+    rect_y_final = 100
+
+    circle = rg.Circle(rg.Point(circ_x, circ_y), 75)
+    circle.fill_color = 'blue'
+    circle.attach_to(window)
+
+    rectangle = rg.Rectangle(rg.Point(rect_x_init, rect_y_init), rg.Point(rect_x_final, rect_y_final))
+    rectangle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
+    print(circle.outline_thickness)
+    print(circle.fill_color)
+    print(circle.center)
+    print(circ_x)
+    print(circ_y)
+    print(rectangle.outline_thickness)
+    print(rectangle.fill_color)
+    print(rectangle.get_center())
+    print((rect_x_final + rect_x_init)/2)
+    print((rect_y_final + rect_y_init)/2)
 
 def lines():
     """
@@ -99,8 +141,26 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
 
+    window = rg.RoseWindow(500, 500)
+    start1 = rg.Point(300, 300)
+    end1 = rg.Point(425, 50)
+    line = rg.Line(start1, end1)
+    line.color = 'blue'
+    line.attach_to(window)
+
+    thicc_line = rg.Line(rg.Point(350, 300), rg.Point(475, 300))
+    thicc_line.thickness = 10
+    thicc_line.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+    print('-----------------')
+    print('thick line coordinates:')
+    print(thicc_line.get_midpoint())
+    print((thicc_line.start.x + thicc_line.end.x)/2)
+    print((thicc_line.start.y + thicc_line.end.y)/2)
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
